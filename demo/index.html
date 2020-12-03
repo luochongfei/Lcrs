@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>jQuery版本旋转木马图片轮播插件</title>
+	<style type="text/css">
+		*{margin: 0; padding: 0;}
+		body {background-color: #333; text-align: center;}
+		ul{list-style: none;}
+
+		.caroursel {
+			margin: 150px auto 0;
+			width: 1000px;
+			height: 380px;
+		}
+		.caroursel img{
+			display: block;
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+    </style>
+    <link rel="stylesheet" href="../src/jquery.crs.css">
+</head>
+
+<body>
+	<div class="caroursel crs-wrap js-crsWrap1">
+		<div class="crs-panel">
+			<img src="https://fakeimg.pl/620x380/fdd902/333/?text=a">
+			<img src="https://fakeimg.pl/620x380/05a6f0/fff/?text=b">
+			<img src="https://fakeimg.pl/620x380/7fba00/fff/?text=c">
+			<img src="https://fakeimg.pl/620x380/f74e1e/fff/?text=d">
+			<!-- <img src="https://fakeimg.pl/620x380/404/fff/?text=e"> -->
+		</div>
+    </div>
+
+	<div class="caroursel crs-wrap js-crsWrap2">
+		<div class="crs-panel">
+			<img src="https://fakeimg.pl/620x380/fdd902/333/?text=a">
+			<img src="https://fakeimg.pl/620x380/05a6f0/fff/?text=b">
+			<img src="https://fakeimg.pl/620x380/7fba00/fff/?text=c">
+			<img src="https://fakeimg.pl/620x380/f74e1e/fff/?text=d">
+			<!-- <img src="https://fakeimg.pl/620x380/404/fff/?text=e"> -->
+		</div>
+	</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@1.12.0/dist/jquery.min.js"></script>
+    <script src="../src/jquery.crs.js"></script>
+	<script>
+		Lcrs('.js-crsWrap1', {
+			autoPlay: false,
+			vAlign: 'middle',
+        });
+
+		Lcrs('.js-crsWrap2', {
+			autoPlay: true,
+			vAlign: 'middle',
+			onChange(index, $item) {
+				console.log(index, $item);
+			}
+		});
+
+	</script>
+</body>
+
+</html>
